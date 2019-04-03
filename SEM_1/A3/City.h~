@@ -1,0 +1,28 @@
+/*
+CH08-320142
+a2_p3.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+using namespace std;
+
+class City{
+ public:
+  void setName(n);
+  void setNoCitizens(n);
+  void setLocation(n);
+  void setPOI(n);
+  string getName();
+  int getNoCitizens(n);
+  string getLocation(n);
+  string getPOI(n);
+
+ private:
+  string name;
+  int no_citizens;
+  string location;
+  string POI;
+  
+  
+};
+

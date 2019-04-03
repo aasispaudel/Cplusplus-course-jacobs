@@ -1,0 +1,30 @@
+/*
+CH08-320142
+a5_p1.cpp
+Aashish Paudel
+apaudel@jacobs-university.de
+*/
+
+#include <iostream>
+#include "fraction.h"
+
+using namespace std;
+
+int main(void)
+{
+        Fraction a, b, c;
+
+	cin >> a >> b >>c;
+
+	cout << endl;
+	cout << a << endl;
+	cout << b << endl; 
+	cout << c << endl;
+
+	cout << a * b << endl;
+	cout << a/b << endl;
+
+
+	cout << a << "\n" << b << "\n";
+	return 0;
+}

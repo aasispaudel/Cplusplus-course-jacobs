@@ -1,0 +1,36 @@
+/*
+CH08-320142
+a4_p6.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+class Vector {
+ public:
+  //Constructors
+  Vector();
+  Vector(int, double*);
+  //Copy contructor
+  Vector(const Vecot&);
+  ~Vector(); //Destructor
+
+  //Settes
+  void setSize();
+  void setComponents();
+
+  //Getters
+  int getSize();
+  double* getComponents();
+
+  //Additional methods
+  double norm() const;
+  Vector add(const Vector) const;
+  Vector subract(const Vector) const;
+  Vector dot(const Vector) const;
+  
+ private:
+  int size;
+  double* comp;
+};
+
+

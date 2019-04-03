@@ -1,0 +1,31 @@
+/*
+CH08-320142
+a4_p1.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+#include <iostream>
+
+class Box{
+ public:
+  Box();
+  Box(h, w, d);
+
+  //Setters
+  void setHeight(double);
+  void setWidth(double);
+  void setDepth(double);
+
+  //Getters
+  double getHeight();
+  double getWidth();
+  double getDepth();
+  
+ private:
+  double height;
+  double width;
+  double depth;
+};
+
+

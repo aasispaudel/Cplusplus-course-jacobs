@@ -1,0 +1,46 @@
+/*
+CH08-320142
+a1_p4.cpp
+Aashish Paudel
+a.paudel@jacobs-university.de
+*/
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int mycount(int a, int b);
+int mycount(string s, char c);
+
+int main() {
+  int a, b;
+  string str; char ch;
+
+  cin >> a; cin.get();
+  cin >> b; cin.get();
+
+  getline(cin, str);
+  cin >> ch; cin.get();
+
+  cout << mycount(a, b) << endl;
+  cout << mycount(str, ch) << endl;
+  
+  return 0;
+}
+
+int mycount(int a, int b) {
+  return a-b;
+}
+
+int mycount(string s, char c){
+  int count = 0;
+  for (unsigned i = 0; i < s.length(); i++){
+    if (s[i] == c)
+      count++;
+  }
+  if (count == 0)
+    return -1;
+  
+  return count;
+}

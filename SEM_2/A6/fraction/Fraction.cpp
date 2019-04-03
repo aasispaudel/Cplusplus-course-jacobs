@@ -1,0 +1,171 @@
+#include "Fraction.h"
+#include <iostream>
+#include <sstream>
+#include <exception>
+
+using namespace std;
+
+Fraction::Fraction(int a, int b) {
+  if (b == 0)
+    throw LogicException("Invalid data or logical error");
+
+  int temp_gcd = gcd(a, b);
+
+  num = a/ temp_gcd;
+  den = b/ temp_gcd;
+}
+
+Fraction::Fraction(string frac) {
+  string str;
+  int number;
+
+  for (char f: frac) {
+    if (f == '/') {
+      istringstream iss (str);
+      iss >> number;
+      this->num = number;
+      str = "";
+      continue;
+    }
+    str += f;
+  }
+
+  istringstream iss2 (str);
+  iss2 >> number;
+  if (number == 0)
+    throw LogicException("Invalid data or logical error");
+
+  this->den = number;
+
+  int temp_gcd = gcd(this->num, this->den);
+  this->num = this->num/temp_gcd;
+  this->den = this->den/temp_gcd;
+}
+
+Fraction::Fraction(const Fraction& frac) {
+  this->num = frac.num;
+
+  if (this->den == 0)
+    throw LogicException("Invalid data or logical error");
+
+  this->den = frac.den;
+}
+
+bool Fraction::operator< (const Fraction& frac) {
+  return ((float) this->num/this->den) < ((float) frac.num/frac.den);
+}
+
+bool Fraction::operator<= (const Fraction& frac) {
+  return ((float) this->num/this->den) <= ((float) frac.num/frac.den);
+}
+
+
+bool Fraction::operator> (const Fraction& frac) {
+  return ((float) this->num/this->den) > ((float) frac.num/frac.den);
+}
+
+
+bool Fraction::operator>= (const Fraction& frac) {
+  return ((float) this->num/this->den) >= ((float) frac.num/frac.den);
+}
+
+
+bool Fraction::operator== (const Fraction& frac) {
+  return ((float) this->num/this->den) == ((float) frac.num/frac.den);
+}
+
+
+bool Fraction::operator!= (const Fraction& frac) {
+  return ((float) this->num/this->den) != ((float) frac.num/frac.den);  
+}
+
+/*
+  It is a recursive function based on euclid's algorithm for 
+  finding gcd.
+*/
+int Fraction::gcd(int a, int b)
+{
+  //Implement the gcd
+  if (a == 0) {
+    if (b >= 0)
+      return b;
+    else
+      return (-1) * b;
+  }
+  
+  return gcd(b % a, a);
+}
+
+int Fraction::lcm(int a, int b)
+{
+  return (int) (a * b / gcd(a, b));
+
+}
+
+
+// Overloaded IO operators
+ostream& operator<<(ostream& out, const Fraction &frac) {
+  out << frac.num << "/" << frac.den << endl;
+  return out;
+}
+
+istream& operator>>(istream& in, Fraction &frac) {
+  in >> frac.num >> frac.den;
+  
+  if (frac.den == 0)
+    throw LogicException("Invalid data or logical error");
+  
+  return in;
+}
+
+
+/*
+  These are the overloading operators for multiplication and division.
+*/
+Fraction Fraction::operator*(const Fraction& frac) {
+  int num = (this->num * frac.num);
+  int den = (this->den * frac.den);
+
+  Fraction product((num/gcd(num, den)), (den/gcd(num, den)));
+  return product;
+}
+Fraction Fraction::operator/(const Fraction& frac) {
+  int num = (this->num * frac.den);
+  int den = this->den * frac.num;
+  
+  if (den == 0)
+    throw LogicException("Invalid data or logical error");
+  
+  Fraction division((num/gcd(num, den)), (den/gcd(num, den)));
+  return division;
+}
+
+/*
+  These are overloading operators for addition and subtraction
+*/
+
+Fraction Fraction::operator+(const Fraction& frac) {
+  //using the formula from the question
+  int lcmul = lcm(this->den, frac.den);
+  int num = this->num*(lcmul/this->den) + frac.num*(lcmul/frac.den);
+
+  Fraction sum(num/gcd(num, lcmul), lcmul/gcd(num, lcmul));
+  return sum;
+}
+
+
+Fraction Fraction::operator-(const Fraction& frac) {
+  //using the formula from the question
+  int lcmul = lcm(this->den, frac.den);
+  int num = this->num*(lcmul/this->den) - frac.num*(lcmul/frac.den);
+
+  Fraction difference(num/gcd(num, lcmul), lcmul/gcd(num, lcmul));
+  return difference;
+}
+
+Fraction& Fraction::operator=(const Fraction& a) {
+  this->num = a.num;
+  this->den = a.den;
+
+  return *this;
+}

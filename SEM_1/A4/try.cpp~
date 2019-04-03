@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class A{
+private:
+  double* comp;
+
+public:
+  A(double* d) {
+    comp = new double[4];
+    comp = d;
+  }
+  void print() {
+    cout << comp[0] << endl;
+  }
+
+};
+
+int main() {
+  A a({1, 2, 3});
+  a.print();
+  
+  return 0;
+}

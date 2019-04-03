@@ -1,0 +1,21 @@
+#include <iostream>
+#include <array>
+#include <cstring>
+#include <string>
+
+
+using namespace std;
+
+void swap_strings(int* array);
+
+int main() {
+  string strings[] = {"apple", "bnall"};
+
+  cout << strings.size() << endl;
+  return 0;
+}
+
+void swap_strings(int* array) {
+  array[3] = 100;
+} 
+

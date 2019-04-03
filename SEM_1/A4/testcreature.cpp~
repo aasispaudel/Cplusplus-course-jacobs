@@ -1,0 +1,37 @@
+/*
+CH08-320142
+a4_p3.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+
+#include <iostream>
+#include "Creature.h"
+
+using namespace std;
+int main()
+{ 
+    cout << "Creating an Creature.\n";
+    Creature c;
+    c.run();
+
+    cout << "\nCreating a Wizard.\n";
+    Wizard w;
+    w.run();
+    w.hover();
+
+    cout << "\nCreating a Unicorn.\n";
+    Unicorn u;
+    u.run();
+    u.jump();
+
+    cout<< "\nCreating a Dragon\n";
+    Dragon d;
+    d.run();
+    d.breathe();
+    
+    return 0;
+} 
+
+

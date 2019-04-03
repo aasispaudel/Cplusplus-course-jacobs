@@ -1,0 +1,44 @@
+/*
+CH08-320142
+a3_p1.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+#include <iostream>
+#include "City.h"
+
+using namespace std;
+
+void City::setName(n) {
+  name = n;
+}
+
+void City::setNoCitizens(n) {
+  no_citizens = n;
+}
+
+void City::setLocation(n) {
+  location = n;
+}
+
+void City::setPOI(n) {
+  POI = n;
+}
+
+string City::getName() {
+  return name;
+}
+
+string City::getNoCitizens() {
+  return no_citizens;
+}
+
+string City::getLocation() {
+  return location;
+}
+
+string City::getPOI() {
+  return POI;
+}
+

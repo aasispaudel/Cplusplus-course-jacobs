@@ -1,0 +1,24 @@
+/*
+CH08-320142
+a2_p3.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+
+
+#include <iostream>
+#include "City.cpp"
+
+using namespace std;
+
+int main() {
+  City city();
+
+  city.setName("Kathmandu");
+  city.setNoCitizens(10,000,000);
+  city.setLocation("Nepal");
+  city.setPOI("Thamel");
+  
+  return 0;
+}

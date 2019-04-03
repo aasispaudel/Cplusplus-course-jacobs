@@ -1,0 +1,28 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+void f();
+
+int main(int argc, char** argv) {
+  string s = "One apple a day..";
+  
+  cout << s.length() << endl;
+
+  char c = 'a';
+  int count = 0;
+  for (unsigned i = 0; i < s.length(); i++) {
+    if (s[i] == c)
+	  count++;
+  }
+
+  cout << "The occurance:" << count << endl;
+
+
+  f();
+  return 0;
+}
+
+void f(){
+  cout << "Keeps a doctor away.";
+}

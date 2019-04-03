@@ -1,0 +1,2 @@
+Matrix * vector: 
+( 14 32 50 )

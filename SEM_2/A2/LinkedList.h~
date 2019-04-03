@@ -1,0 +1,12 @@
+#ifndef LINKED_LIST_H_
+#define LINKED_LIST_H_
+
+class Node {
+ public:
+  Node* next;
+  Node* prev;
+
+  int val;
+}
+
+#endif

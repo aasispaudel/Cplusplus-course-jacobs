@@ -1,0 +1,52 @@
+#include <iostream>
+#include <exception>
+
+using namespace std;
+
+class Motor {
+public:
+  Motor() {
+    string str = "This motor has problems";
+    throw str;
+  }
+};
+
+class Car {  
+public:
+  Car() {
+    try {
+      Motor motor;
+    }
+    catch (string e){
+      throw e;
+    }
+  }
+};
+
+
+class Garage {
+public:
+  Garage() {
+    try {
+      Car car;
+    }
+
+    catch (string e){
+      string str = "The car in this garange has problems with the motor";
+      throw str;
+    }
+  }
+};
+
+
+int main () {
+  try {
+    Garage garage;
+  }
+
+  catch (string str) {
+    cout << "Caught in main: " << str << endl;
+  }
+  
+  return 0;
+}

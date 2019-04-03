@@ -1,0 +1,49 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class A{
+public:
+  string name;
+  int ab;
+  int bc;
+public:
+  A() {};
+  A(string name) {
+    this->name = name;
+  };
+
+  void changeName(string newName) {
+    name = newName;
+  }
+
+  string getName() {
+    return name;
+  };
+
+  int getA() {
+    return ab;
+  };
+  A returnShit() {
+    return *this;
+  };
+
+  friend istream& operator>>(istream& in, const A& a);
+};
+
+istream& operator>>(istream& in, A& a) {
+  in >> a.ab >> a.bc;
+  return in;
+}
+
+
+int main() {
+  A a;
+
+  cin >> a;
+
+  
+  return 0;
+  
+}

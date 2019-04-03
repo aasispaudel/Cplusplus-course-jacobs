@@ -1,0 +1,26 @@
+/*
+CH08-320142
+a4_p6.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+#include <iostream>
+#include "Vector.h"
+
+Vector::Vector() {
+  size = 0;
+  
+}
+
+Vector::Vector(int size, double* c) {
+  this->size = size;
+  comp = new double[size];
+
+}
+
+Vector::~Vector() {
+  delete[] comp;
+}
+
+

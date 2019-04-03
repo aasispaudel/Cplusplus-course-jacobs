@@ -1,0 +1,17 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+
+int main() {
+
+  ifstream file ("file1.txt", ios::binary | ios::in);
+  char buffer[30];
+  
+  file.read(buffer, 30);
+
+  cout << buffer << endl;
+  
+  return 0;
+}

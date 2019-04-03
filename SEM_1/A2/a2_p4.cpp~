@@ -1,0 +1,73 @@
+/*
+CH08-320142
+a2_p3.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+#include <iostream>
+#include <cstdlib>
+#include <ctime>
+#include <cstring>
+
+using namespace std;
+
+// To play the game
+void play_game(int* words, int n);
+int main() {
+  int words[] = {"computer",
+                 "television",
+		 "keryboard",
+		 "magazine",
+		 "noxious",
+		 "embarrass",
+		 "attempt",
+                 "generator",
+                 "popular",
+                 "exercise",
+                 "generate",
+                 "separate",
+                 "afraid",
+                 "mountain",
+                 "cplusplus"};
+
+  play_game(words, 15);
+  
+  return 0;
+}
+
+void play_game(int* words, int n) {
+  srand(static_cast<unsigned int>(time(0)));
+  
+  int magic_no = rand() % 15;
+  string magic_word = words[magic_no];
+
+  string guess_word = magic_word;
+
+  //Change the vowels with underscore
+  for (int i = 0; i < strlen(guess_word); i++) {
+    if (guess_word[i] == 'a' || guess_word[i] == 'e' || guess_word[i] == 'i' || guess_word[i] == 'o' || guess_word[i] == 'u') {
+      magic_word[i] = '_';
+    }
+  }
+
+  //Ask the user to guess the word
+  int noOfTries = 0;
+  while (true){
+  cout << "Guess the word??  " << guess_word << endl;
+
+  //Take the user's guess
+  string user_word;
+  getline(cin, user_word);
+  
+  if (user_word == magic_word) {
+    cout << "Congratulations!!!\nNo of tries:: " << noOfTries << endl;   
+    return;
+      }
+
+    noOfTries ++;
+    
+  }
+  
+  return;
+}

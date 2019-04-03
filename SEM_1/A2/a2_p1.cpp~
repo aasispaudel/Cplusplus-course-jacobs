@@ -1,0 +1,79 @@
+/*
+CH08-320142
+a2_p1.cpp
+Aashish Paudel
+apaudel@jacobs-university.de
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int myfirst(int array[], int n);
+double myfirst(double array[], int n);
+char myfifrst(char array[], int n);
+
+int main() {
+  cout << "How many values you want to enter:: ";
+  int n;
+  cin >> n; cin.get();
+
+  cout << "Datatype?? (I/D/C) ";
+  string s;
+  getline(cin, s);
+
+  if (s == "I") {
+    int array[n];
+     for (int i = 0; i < n; i++){
+       cin >> array[i];
+     }
+     cout << myfirst(array, n);
+
+  }
+     
+  else if (s == "D") {
+    double array[n];
+     for (int i = 0; i < n; i++){
+       cin >> array[i];
+     }
+     cout << myfirst(array, n);
+
+  }
+  
+  else {
+    char array[n];
+     for (int i = 0; i < n; i++){
+       cin >> array[i];
+     }
+     cout << myfirst(array, n);
+
+  }
+  
+
+  return 0;
+}
+
+int myfirst(int array[], int n) {
+  for (int i = 0; i < n; i++) {
+    if ((array[i] > 0) && (array[i] % 2 == 1)) return array[i];
+  }
+  return -1;
+    }
+
+double myfirst(double array[], int n) {
+  for (int i = 0; i < n;i++) {
+    if ((array[i] > 0) && (array[i] == (int) array[i]))
+      return array[i];
+  }
+  return -1.1;
+}
+
+  char myfirst(char array[], int n) {
+  for (int i =0; i < n; i++) {
+    //int ASCII = (int) (toupper(char[i]))
+    char ch = tolower(array[i]);
+    if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u')
+      return ch;
+  }
+  return '0';
+}

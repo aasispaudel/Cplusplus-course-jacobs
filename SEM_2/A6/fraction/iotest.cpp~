@@ -1,0 +1,21 @@
+#include <iostream>
+
+
+int pass = 0;
+int fail = 0;
+
+void test (bool a) {
+  if (a) {
+    pass++;
+  }
+  else
+    fail++;
+}
+
+int main () {
+  Fraction f1;
+
+  cin >> f1;
+  cout << f1 << endl;
+  
+}

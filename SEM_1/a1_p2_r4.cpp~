@@ -1,0 +1,15 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+int main() {
+  int nr; float val; string s;
+
+  cin >> nr;
+  cin >> val;
+  getline(cin, s);
+
+  for (int i=0; i < nr; i++)
+    cout << nr << " " << s << '\n';
+  return 0;
+}

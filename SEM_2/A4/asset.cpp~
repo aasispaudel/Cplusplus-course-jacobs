@@ -1,0 +1,9 @@
+#include <iostream>
+#include <set>
+
+class Access {
+public:
+  void activate (unsigned int);
+  void deactivate (unsigned int);
+  bool isacative (unsigned int) const;
+};

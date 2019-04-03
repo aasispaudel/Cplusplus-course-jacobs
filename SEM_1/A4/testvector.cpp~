@@ -1,0 +1,16 @@
+/*
+CH08-320142
+a4_p6.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+#include <iostream>
+#include "Vector.h"
+
+int main() {
+  Vector v(5, [1, 2, 3, 4]);
+  
+  return 0;
+}
+

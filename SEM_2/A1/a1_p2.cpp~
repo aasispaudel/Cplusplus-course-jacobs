@@ -1,0 +1,43 @@
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+int main () {
+  int n;
+  cin >> n;
+
+  char fileNames[n][50];
+  for (int i = 0; i < n; i++) {
+    cin >> fileNames[i];
+  }
+
+  ifstream file;
+  ofstream writer ("output.txt", ios::binary | ios::app);
+  
+  char * buffer;
+  int size;
+  for (int i = 0; i < n; i++) {
+    file.open(fileNames[i], ios::in | ios::binary);
+
+      size = file.tellg();
+
+      cout << size << endl;
+      
+      buffer = new char[size];
+
+      file.read(buffer, size);
+      
+      writer.write(buffer, size);
+      
+      file.close();
+
+      delete[] buffer;
+    
+  }
+  
+
+  writer.close();
+  
+  return 0;
+}

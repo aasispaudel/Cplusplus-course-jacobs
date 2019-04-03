@@ -1,0 +1,41 @@
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p1
+vector::_M_range_check: __n (which is 21) >= this->size() (which is 20)
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p2
+terminate called after throwing an instance of 'char'
+Aborted (core dumped)
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p2
+terminate called after throwing an instance of 'char'
+Aborted (core dumped)
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p2
+Character exception
+Integer excetion
+Boolean exception
+OwnException
+
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p2
+Character exception
+Integer excetion
+Boolean exception
+OwnException
+
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p2
+Caught in main: a
+Caught in main: 12
+Caught in main: 1
+Cought in main: OwnException
+
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p3
+terminate called after throwing an instance of 'char const*'
+Aborted (core dumped)
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p3
+terminate called after throwing an instance of 'char const*'
+Aborted (core dumped)
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p3
+terminate called after throwing an instance of 'char const*'
+Aborted (core dumped)
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p3
+terminate called after throwing an instance of 'char const*'
+Aborted (core dumped)
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ ./a5_p3
+Caught in main: The car in this garange has problems with the motor
+umbrella@umbrella-Aspire-F5-571:~/cppWorks/SEM_2/A5$ 

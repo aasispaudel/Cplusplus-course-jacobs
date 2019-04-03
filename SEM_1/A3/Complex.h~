@@ -1,0 +1,28 @@
+/*
+CH08-320142
+a3_p6.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+
+class Complex{
+ public:
+  Complex();
+  Complex(double, double=0);
+  ~Complex();
+  setReal(double);
+  setImag(double);
+  getReal(double);
+  getImag(double);
+  add(Complex);
+  subtract(Complex);
+  multiply(Complex);
+  print();
+
+ private:
+  double real;
+  double imag;
+  
+
+};

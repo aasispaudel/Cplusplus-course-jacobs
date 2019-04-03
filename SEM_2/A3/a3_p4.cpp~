@@ -1,0 +1,23 @@
+#include <iostream>
+#include <deque>
+
+using namespace std;
+
+int main() {
+  deque<double> dflt;
+
+  
+  // 1 and 2
+  while (true) {
+    cin >> i;
+    if (i <= 0)
+      break;
+
+    // 3 and 3
+    dflt.push_back(i);
+    dflt.push_front(i);
+  }
+
+  
+  return 0;
+}

@@ -1,0 +1,81 @@
+/*
+CH08-320142
+a3_p6.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+#include <iostream>
+#include <cstring>
+#include "Complex.h"
+
+using namespace std;
+
+Complex::Complex(){
+  //cout << "No parameter constructor being called." << endl;
+  real = 0;
+  imag = 0;
+}
+
+Complex::Complex(double r, double i){
+  //cout << "All parameter constructor being called." << endl;
+  real =r;
+  imag = i;
+}
+
+Complex::~Complex(){
+  //cout << "Destructor being called..." << endl;
+}
+
+
+//Setters
+void Complex::setReal(double r){
+  real = r;
+}
+
+void Complex::setImag(double i) {
+  imag = i;
+}
+
+
+//Getters
+double Complex::getReal(){
+  return real;
+}
+
+double Complex::getImag(){
+  return imag;
+}
+
+//Printing method
+void Complex::print() {
+  if (imag >= 0)
+    cout << real << "+" << imag << "i" << endl;
+  else
+    cout << real << imag << "i" << endl;
+}
+
+//Operation methods
+
+Complex Complex::find_conjugate() {
+  Complex conjugate(real, (-imag));
+  return conjugate;
+}
+
+Complex Complex::add(Complex a) {
+  Complex sum(real+a.real, imag+a.imag);
+  
+  return sum;
+}
+
+Complex Complex::subtract(Complex a) {
+  Complex difference(real-a.real, imag-a.imag);
+  
+  return difference;
+}
+
+Complex Complex::multiply(Complex a) {
+  Complex product(real*a.real, imag*a.imag);
+  
+  return product;
+}

@@ -1,0 +1,19 @@
+/*
+CH08-320142
+a2_p3.cpp
+Aashish Paudel
+aasispaudel@jacobs-university.de
+*/
+
+#include <iostream>
+
+using namespace std;
+
+int isPalindrome(string word);
+
+int main() {
+  
+  
+  return 0;
+}
+

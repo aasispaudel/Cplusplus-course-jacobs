@@ -1,0 +1,9 @@
+#include <iostream>
+#include <assert>
+#include "LinkedList.h"
+
+List<T>::List() {
+  n1.next = NULL;
+  n1.prev = NULL;
+  n1.val = val;
+}

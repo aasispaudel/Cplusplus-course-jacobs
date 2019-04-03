@@ -1,0 +1,20 @@
+#include "Fraction.h"
+#include <iostream>
+
+using namespace std;
+
+Fraction::Fraction(int a, int b) {
+  num = a;
+  den = b;
+}
+
+Fraction::Fraction(string frac) {
+  string str;  
+  for (f: frac) {
+    if (f == '/') {
+      this->num = (int) str;
+      str = "";
+    }
+    str += f;
+  }
+}

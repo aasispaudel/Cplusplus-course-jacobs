@@ -1,0 +1,12 @@
+class First{ 
+ public:
+  int id;
+
+  void setId(int x);
+  int getId();
+
+ private:
+  int id;
+
+  void doubleId(int x);
+}

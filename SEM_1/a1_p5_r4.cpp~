@@ -1,0 +1,20 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main() {
+  string str = "";
+  char ch;
+
+  bool validate = true;
+
+  while (validate) {
+    cin >> ch;
+
+    str = str + (str) ch;
+  }
+
+  cout << str << endl;
+  return 0;
+}
